@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*- Main */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #1C1C1C;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    line-height: 150%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    margin: 0;
+}
+
+.container  {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #1C1C1C;
+    font-weight: 600;
+    width: 120px;
+    height: 50px;
+    border-radius: 8px;
+    transition: background-color 0.4s;
+}
+
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.btn::before,
+.btn::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 120px;
+    background: conic-gradient(
+        from var(--deg) at center,
+        #383838,
+        #4f4f4f,
+        #696969,
+        #9c9c9c,
+        #4f4f4f,
+        #383838
+    );
+    border-radius: inherit;
+    padding: 1px;
+    animation: autoRotate 2s linear infinite;
+}
+.btn::after {
+    filter: blur(8px);
+}
+
+@keyframes autoRotate {
+    to{
+        --deg: 360deg;
+    }
+}
+
+.btn:hover {
+    background-color: #222222;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 120px;
+    background: conic-gradient(
+        from var(--deg) at center,
+        #383838,
+        #4f4f4f,
+        #696969,
+        #9c9c9c,
+        #4f4f4f,
+        #383838
+    );
+    border-radius: inherit;
+    padding: 2px;
+    animation: autoRotate 2s linear infinite;
+}
+
+.btn:hover::after {
+    filter: blur(12px);
+}
+
+/*- Header */
+
+.header {
+    padding: 25px 0;
+}
+
+.header .container  {
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.header__nav a {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+}
+
+.header__nav a.active {
+    opacity: 1;
+    font-weight: 300;
+}
+
+.header__nav a:hover {
+    opacity: 0.9;
+}
+
+/*- Welcome-*/
+
+.welcome {
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+
+    margin-top: -100px;
+    padding: 100px 0;
+    z-index: -2;
+    background-image: url("./wp1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome .container {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome .carpng {
+    margin-top: 50px;
+}
+
+.welcome__text {
+    width: 35%;
+    margin: 10% 10%;
+    margin-top: 18%;
+}
+
+.welcome__subtitle {
+    font-size: small;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    letter-spacing: 4px;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.welcome__title {
+    font-size: 48px;
+    font-weight: 600;
+    opacity: 1;
+}
+
+.welcome__desc {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/*- Footer */
+
+.footer {
+    height: 60px;
+}
